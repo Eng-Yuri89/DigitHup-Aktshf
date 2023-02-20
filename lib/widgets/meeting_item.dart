@@ -166,8 +166,8 @@ joinMeeting(BuildContext context, {meetingId, meetingPassword,name='username'}) 
 
   ZoomOptions zoomOptions = ZoomOptions(
     domain: "zoom.us",
-    appKey: "XKE4uWfeLwWEmh78YMbC6mqKcF8oM4YHTr9I", //API KEY FROM ZOOM
-    appSecret: "bT7N61pQzaLXU6VLj9TVl7eYuLbqAiB0KAdb", //API SECRET FROM ZOOM
+    appKey: "FnoAY6Y7QNWQ1Q9hS8cZQw", //API KEY FROM ZOOM
+    appSecret: "6RsjVbPtEkIqSKzKZED4DxMSE3FlmKZ6SpbX", //API SECRET FROM ZOOM
   );
   var meetingOptions = ZoomMeetingOptions(
       userId: name,
@@ -193,7 +193,7 @@ joinMeeting(BuildContext context, {meetingId, meetingPassword,name='username'}) 
     if (results[0] == 0) {
       zoom.onMeetingStatus().listen((status) {
         if (kDebugMode) {
-          print("[Meeting Status Stream] : " + status[0] + " - " + status[1]);
+          print("${"[Meeting Status Stream] : " + status[0]} - " + status[1]);
         }
         if (_isMeetingEnded(status[0])) {
           if (kDebugMode) {
@@ -209,9 +209,8 @@ joinMeeting(BuildContext context, {meetingId, meetingPassword,name='username'}) 
         timer = Timer.periodic(const Duration(seconds: 2), (timer) {
           zoom.meetingStatus(meetingOptions.meetingId!).then((status) {
             if (kDebugMode) {
-              print("[Meeting Status Polling] : " +
-                  status[0] +
-                  " - " +
+              print("${"[Meeting Status Polling] : " +
+                  status[0]} - " +
                   status[1]);
             }
           });
@@ -220,7 +219,7 @@ joinMeeting(BuildContext context, {meetingId, meetingPassword,name='username'}) 
     }
   }).catchError((error) {
     if (kDebugMode) {
-      print("[Error Generated] : " + error);
+      print( error);
     }
   });
   // else {

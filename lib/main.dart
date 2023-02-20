@@ -1,5 +1,3 @@
-
-
 import 'package:e_learning/models/main_data.dart';
 import 'package:e_learning/models/routes.dart';
 import 'package:e_learning/providers/auth.dart';
@@ -19,16 +17,8 @@ import 'package:e_learning/screens/home_screen.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:permission_handler/permission_handler.dart';
-import 'dart:io' show Platform;
-Future<void> main() async {
-  if (Platform.isAndroid) {
-    await Permission.locationWhenInUse.request();
-    await Permission.bluetooth.request();
-    await Permission.bluetoothScan.request();
-    await Permission.bluetoothConnect.request();
-  }
 
+void main() {
   runApp(const MyHomePage());
 }
 
@@ -128,4 +118,3 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 }
-

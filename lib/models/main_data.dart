@@ -4,8 +4,10 @@ String mainTitle = "أكتشف سر لغتي";
 // url
 // String mainUrl = "http://localhost:90/mew-edu-app/public/api/v1/";
 // String siteUrl = "http://localhost:90/mew-edu-app/public/";
-String mainUrl = "https://dev.digithup.net/api/v1/";
- String siteUrl = "https://dev.digithup.net/";
+const mainUrl = "https://dev.digithup.net/api/v1/";
+const siteUrl = "https://dev.digithup.net/";
+// const zoomApi ='FnoAY6Y7QNWQ1Q9hS8cZQw';
+// const zoomSec = '6RsjVbPtEkIqSKzKZED4DxMSE3FlmKZ6SpbX';
 // width and height of screens
 extension MediaQueryValues on BuildContext {
   double get screenWidth => MediaQuery.of(this).size.width;

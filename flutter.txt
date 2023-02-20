@@ -1,0 +1,91 @@
+// generate keystore
+keytool -genkey -v -keystore logaty.keystore -alias logaty -keyalg RSA -keysize 2048 -validity 10000
+password:logaty-09-2022
+----------------------------------------
+What is your first and last name?
+----
+What is the name of your organizational unit?
+----
+What is the name of your organization?
+----
+What is the name of your City or Locality?
+----
+What is the name of your State or Province?
+----
+What is the two-letter country code for this unit?
+----/  p  yr,k
+yes
+----
+Enter key password for
+        (RETURN if same as keystore password):
+password:logaty-09-2022
+-----------------------------------------------------------------------------------------
+// run null saftey
+flutter run --no-sound-null-safety
+-----------------------------------------------------------------------------------------
+// white screen before splash
+= install : flutter_native_splash
+flutter pub run flutter_native_splash:create
+-----------------------------------------------------------------------------------------
+// change name of app package
+= install : change_app_package_name
+flutter pub run change_app_package_name:main com.logaty.app
+-----------------------------------------------------------------------------------------
+// lanch icons of the app
+= install : flutter_launcher_icons
+flutter pub run flutter_launcher_icons:main
+-----------------------------------------------------------------------------------------
+//move key store to [project]/android/app
+//Create a file named [project]/android/key.properties that contains a reference to your keystore:
+storePassword=logaty-09-2022
+keyPassword=logaty-09-2022
+keyAlias=logaty
+storeFile=../app/logaty.keystore
+-----------------------------------------------------------------------------------------
+//Configure gradle to use your upload key when building your app in release mode by editing the
+    [project]/android/app/build.gradle file.
+1-Add the keystore information from your properties file before the android block:
+   def keystoreProperties = new Properties()
+   def keystorePropertiesFile = rootProject.file('key.properties')
+   if (keystorePropertiesFile.exists()) {
+       keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
+   }
+
+   android {
+         ...
+   }
+
+****
+2- Find the buildTypes block: And replace it with the following signing configuration info:
+
+   signingConfigs {
+       release {
+           keyAlias keystoreProperties['keyAlias']
+           keyPassword keystoreProperties['keyPassword']
+           storeFile keystoreProperties['storeFile'] ? file(keystoreProperties['storeFile']) : null
+           storePassword keystoreProperties['storePassword']
+       }
+   }
+   buildTypes {
+       release {
+           signingConfig signingConfigs.release
+       }
+   }
+****
+3- flutter clean && flutter build appbundle --release
+****
+4- Upload your appbundle files in this directory: {project-root}/build/app/output/bundle/release/app-release.aab
+-----------------------------------------------------------------------------------------
+يستهدف تطبيقك حاليًا المستوى 30 من واجهة برمجة التطبيقات، ولكن يجب أن يستهدف المستوى 31 على الأقل لضمان استناده إلى أحدث واجهات برمجة التطبيقات المحسَّنة من حيث الأمان والأداء. يمكنك تغيير مستوى واجهة برمجة التطبيقات الذي يستهدفه تطبيقك إلى المستوى 31 على الأقل. مزيد من المعلومات
+//go to : {project-root}/android/app/build.gradle
+targetSdkVersion 31
+-----------------------------------------------------------------------------------------
+لقد حمّلت ملف APK أو مجموعة حزمات تطبيق Android تحتوي على نشاط أو اسم نشاط مستعار أو خدمة أو مستقبِل بث يتضمّن فلتر أهداف، ولكن بدون ضبط الخاصية 'android:exported'. يُرجى العلم أنّ هذا الملف لا يمكن تثبيته على الإصدار 12 من Android أو الإصدارات الأحدث. وللحصول على المزيد من المعلومات، يُرجى الانتقال إلى: developer.android.com/about/versions/12/behavior-changes-12#exported.
+//go to : {project-root}/android/app/src/main/AndroidManifest.xml
+<activity android:exported="true"
+-----------------------------------------------------------------------------------------
+use pod installpod install if  is an error when build from xcode
+-----------------------------------------------------------------------------------------
+xmlns:tools="http://schemas.android.com/tools" tp manifist
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------

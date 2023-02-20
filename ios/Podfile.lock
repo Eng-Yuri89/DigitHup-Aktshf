@@ -1,0 +1,67 @@
+PODS:
+  - Flutter (1.0.0)
+  - flutter_native_splash (0.0.1):
+    - Flutter
+  - flutter_zoom_sdk (0.0.1):
+    - Flutter
+  - NWWebSocket (0.5.2)
+  - pusher_channels_flutter (0.0.1):
+    - Flutter
+    - PusherSwift (~> 10.0.0)
+  - PusherSwift (10.0.0):
+    - NWWebSocket (~> 0.5.2)
+    - TweetNacl (~> 1.0.0)
+  - shared_preferences_ios (0.0.1):
+    - Flutter
+  - TweetNacl (1.0.2)
+  - url_launcher_ios (0.0.1):
+    - Flutter
+  - webview_flutter_wkwebview (0.0.1):
+    - Flutter
+
+DEPENDENCIES:
+  - Flutter (from `Flutter`)
+  - flutter_native_splash (from `.symlinks/plugins/flutter_native_splash/ios`)
+  - flutter_zoom_sdk (from `.symlinks/plugins/flutter_zoom_sdk/ios`)
+  - pusher_channels_flutter (from `.symlinks/plugins/pusher_channels_flutter/ios`)
+  - shared_preferences_ios (from `.symlinks/plugins/shared_preferences_ios/ios`)
+  - url_launcher_ios (from `.symlinks/plugins/url_launcher_ios/ios`)
+  - webview_flutter_wkwebview (from `.symlinks/plugins/webview_flutter_wkwebview/ios`)
+
+SPEC REPOS:
+  trunk:
+    - NWWebSocket
+    - PusherSwift
+    - TweetNacl
+
+EXTERNAL SOURCES:
+  Flutter:
+    :path: Flutter
+  flutter_native_splash:
+    :path: ".symlinks/plugins/flutter_native_splash/ios"
+  flutter_zoom_sdk:
+    :path: ".symlinks/plugins/flutter_zoom_sdk/ios"
+  pusher_channels_flutter:
+    :path: ".symlinks/plugins/pusher_channels_flutter/ios"
+  shared_preferences_ios:
+    :path: ".symlinks/plugins/shared_preferences_ios/ios"
+  url_launcher_ios:
+    :path: ".symlinks/plugins/url_launcher_ios/ios"
+  webview_flutter_wkwebview:
+    :path: ".symlinks/plugins/webview_flutter_wkwebview/ios"
+
+SPEC CHECKSUMS:
+  Flutter: f04841e97a9d0b0a8025694d0796dd46242b2854
+  flutter_native_splash: 52501b97d1c0a5f898d687f1646226c1f93c56ef
+  flutter_zoom_sdk: 62caf74a6f8822790a98b2251bf7f4a7e2590057
+  NWWebSocket: 21f0c73639815da3272862c912275b26102aa80c
+  pusher_channels_flutter: 36d51ae4a94195bb9109c2009de2f8445e222d67
+  PusherSwift: 264eaceb921a5f8e166f01a2242371179540c7ff
+  shared_preferences_ios: 548a61f8053b9b8a49ac19c1ffbc8b92c50d68ad
+  TweetNacl: 3abf4d1d2082b0114e7a67410e300892448951e6
+  url_launcher_ios: 839c58cdb4279282219f5e248c3321761ff3c4de
+  webview_flutter_wkwebview: b7e70ef1ddded7e69c796c7390ee74180182971f
+
+PODFILE CHECKSUM: 61beb6ca82830023b57724d3cc83e1dcc1f779be
+
+COCOAPODS: 1.11.3

@@ -172,6 +172,8 @@ joinMeeting(BuildContext context, {meetingId, meetingPassword,name='username'}) 
   var meetingOptions = ZoomMeetingOptions(
       userId: name,
 
+
+
       /// pass username for join meeting only --- Any name eg:- EVILRATT.
       meetingId: meetingId,
 

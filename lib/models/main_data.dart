@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 // title
 String mainTitle = "أكتشف سر لغتي";
 // url
-// String mainUrl = "http://localhost:90/mew-edu-app/public/api/v1/";
-// String siteUrl = "http://localhost:90/mew-edu-app/public/";
+// String mainUrl = "http://127.0.0.1:8000/api/v1/";
+// String siteUrl = "http://127.0.0.1:8000/";
 const mainUrl = "https://dev.digithup.net/api/v1/";
 const siteUrl = "https://dev.digithup.net/";
 // const zoomApi ='FnoAY6Y7QNWQ1Q9hS8cZQw';
